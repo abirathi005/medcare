@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>MedCare</h2>
+        <ul>
+            <li class="active" onclick="showSection('dashboard', this)">Dashboard</li>
+            <li onclick="showSection('appointments', this)">Appointments</li>
+            <li onclick="showSection('queries', this)">Queries</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="section active">
+            <div class="card">
+                <h3>Welcome to Patient Dashboard</h3>
+                <p>Manage your appointments and health queries here.</p>
+            </div>
+        </div>
+
+        <!-- Appointments Section -->
+        <div id="appointments" class="section">
+            <div class="card">
+                <h4>Book Appointment</h4>
+
+                <div class="form-row">
+                    <select id="doctor">
+                        <option>Dr. Smith</option>
+                        <option>Dr. Williams</option>
+                    </select>
+
+                    <input type="date" id="date">
+
+                    <button onclick="bookAppointment()">Book</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Queries Section -->
+        <div id="queries" class="section">
+            <div class="card">
+                <h4>Submit Query</h4>
+
+                <input type="text" id="subject" placeholder="Subject">
+                <textarea id="description" placeholder="Describe your issue"></textarea>
+                <button onclick="submitQuery()">Submit</button>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
